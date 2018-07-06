@@ -1,0 +1,29 @@
+<%= link_to 'New restaurant', new_restaurant_path %>
+<h1>공인맛집</h1>
+
+<div id= "title" class="row">
+<% @restaurants.each do |restaurant| %>
+<div class="card col-md-3">
+  <img class="card-img-top" src="<%= restaurant.image_path.thumb.url%>" alt="<%= restaurant.res_name%>">
+  <div class="card-body">
+    <h5 class="card-title"><span><%= restaurant.res_name%></span></h5>
+    <p class="card-text"><%= restaurant.food_type%></p>
+    <p class="card-text"><%= restaurant.detail_addr%></p>
+    <p class="card-text"><%= restaurant.phone%></p>
+    
+    <%= link_to '식당 정보보기', restaurant_path(restaurant), class: 'btn btn-primary' %>
+  </div>
+</div>
+<%  end %>
+</div>
+
+<hr>
+<% if user_signed_in? %>
+<!-- 로그인된 상태  -->
+<%= current_user.email%>
+<%= link_to '로그 아웃', destroy_user_session_path, method: "delete" %>
+<% else %>
+<!-- 로그아웃된 상태  -->
+<%= link_to '로그인', new_user_session_path %>
+<%  end %>
+<hr>
