@@ -5,8 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-#beautify
-gem 'bootstrap','~>4.1.1'
+# beautify
+# gem 'bootstrap','~>4.1.1'
 #authentication
 gem 'devise'
 #file upload
@@ -62,3 +62,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#bootstrap 3
+gem 'bootstrap-sass'
+
+#font-awesome
+gem 'font-awesome-rails'
